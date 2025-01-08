@@ -1,18 +1,24 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Description: Asigna un número aleatorio a la variable n y
+ * imprime si el número es positivo, negativo o cero.
+ *
+ * Return: 0 (Always success)
+ */
 
 int main(void)
 {
 	int n;
 
-	/* Seed the random number generator using the current time */
 	srand(time(0));
 
-	/* Generate a random number and store it in n */
 	n = rand() - RAND_MAX / 2;
 
-	/* Check if n is positive, negative, or zero, and print the appropriate message */
 	if (n > 0)
 	{
 		printf("%d is positive\n", n);
