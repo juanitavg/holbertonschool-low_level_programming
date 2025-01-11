@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * times_table - Prints the 9 times table, starting with 0.
+ * times_table - prints the 9 times table
+ *
+ * Return: void
  */
 void times_table(void)
 {
@@ -15,16 +17,24 @@ void times_table(void)
 
 			if (col != 0)
 			{
-				_putchar(',');  /* Print a comma and space between numbers */
 				_putchar(' ');
 			}
 
-			if (result >= 10)
+			if (result < 10)
+			{
+				_putchar(result + '0');
+			}
+			else
 			{
 				_putchar(result / 10 + '0');  /* Print the tens place */
+				_putchar(result % 10 + '0');  /* Print the ones place */
 			}
 
-			_putchar(result % 10 + '0');  /* Print the ones place */
+			if (col != 9) /* Avoid the comma after the last number in the row */
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
